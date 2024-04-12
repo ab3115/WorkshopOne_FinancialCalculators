@@ -16,42 +16,48 @@ public class Main {
         System.out.println(" 3 - Ordinary annuity Calculator");
         String user_input = scanner.nextLine();
 
-        if(user_input == "1") {
+        if(user_input.equals("1")) {
 
-            double Mortgage_Payment = MortgageCalc(scanner);
+            double Mortgage = MortgageCalc(scanner);
 
-        }    else if(user_input == "2") {
+        }
+        else if(user_input.equals("2")) {
 
             int Deposit_Value = DepositValueCalc(scanner);
 
-        }   else if(user_input == "3")  {
-
-            int Annuity_Value = AnnuityCalc(scanner);{
-
-            }
         }
-    }
+        else if(user_input.equals("3"))  {
+
+            int Annuity_Value = AnnuityCalc(scanner);
+
+        }
+        else{
+            System.out.println("Please Select a Valid Choice");
+        }
+        }
+
 
     public static double MortgageCalc(Scanner scanner){
 
-        System.out.println("What is your principle loan amount?");
+        System.out.println("What is your principle rate?");
         int principle_rate = scanner.nextInt();
-        System.out.println("What is your monthly interest rate? (Decimal Form) ");
+        System.out.println("What is your interest rate?");
         int interest_rate = scanner.nextInt();
-        System.out.println("How long is your loan for? (In Months");
+        System.out.println("How long is your loan for?");
         int loan_length = scanner.nextInt();
         double answer = ((principle_rate * (interest_rate * (Math.pow((1 + interest_rate), loan_length)))) / (Math.pow((1 + interest_rate), loan_length) - 1));
-        return answer;
+        return -1;
+
+
     }
 
     public static int DepositValueCalc(Scanner scanner){
 
-
-    return 0;}
+    return -1;
+    }
 
     public static int AnnuityCalc(Scanner scanner){
-    return 0;
 
-
+return -1;
     }
 }
