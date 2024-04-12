@@ -1,17 +1,19 @@
 package com.ps;
+import java.util.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Hello! Welcome to Yearup's Financial Organization App!");
+        System.out.println("Which service would you like to use?");
+        System.out.println(" 1 - Mortgage Calculator");
+        System.out.println(" 2 - Future Deposit Value Calculator");
+        System.out.println(" 3 - Ordinary annuity Calculator");
+        String user_input = scanner.nextLine();
+        if(user_input = )
     }
 }
