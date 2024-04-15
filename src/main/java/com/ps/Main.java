@@ -18,7 +18,8 @@ public class Main {
 
         if(user_input.equals("1")) {
 
-            double Mortgage = MortgageCalc(scanner);
+            MortgageCalc(scanner);
+
 
         }
         else if(user_input.equals("2")) {
@@ -37,23 +38,30 @@ public class Main {
         }
 
 
-    public static double MortgageCalc(Scanner scanner){
+    public static void MortgageCalc(Scanner scanner){
 
-        System.out.println("What is your principle rate?");
-        int principle_rate = scanner.nextInt();
+        System.out.println("What is your principle amount?");
+        int principle_amount = scanner.nextInt();
         System.out.println("What is your interest rate?");
-        int interest_rate = scanner.nextInt();
+        double interest_rate = scanner.nextDouble();
         System.out.println("How long is your loan for?");
         int loan_length = scanner.nextInt();
-        double answer = ((principle_rate * (interest_rate * (Math.pow((1 + interest_rate), loan_length)))) / (Math.pow((1 + interest_rate), loan_length) - 1));
-        return -1;
+        interest_rate = interest_rate / 12;
+        double monthly_payment = (principle_amount * interest_rate) / (1 - Math.pow(1 + interest_rate, -loan_length));
+        double total_interest = (monthly_payment * loan_length) - principle_amount;
+        System.out.println("Your monthly payment is $" + monthly_payment + " per month with a total interest of $" + total_interest);
+
 
 
     }
 
     public static int DepositValueCalc(Scanner scanner){
-
-    return -1;
+    System.out.println("Enter deposit amount");
+    int deposit_amount = scanner.nextInt();
+    System.out.println("Enter your interest rate");
+    int interest_rate = scanner.nextInt();
+    System.out.println("Enter ");
+    return 0;
     }
 
     public static int AnnuityCalc(Scanner scanner){
