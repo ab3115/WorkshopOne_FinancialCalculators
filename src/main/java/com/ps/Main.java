@@ -24,7 +24,7 @@ public class Main {
         }
         else if(user_input.equals("2")) {
 
-            int Deposit_Value = DepositValueCalc(scanner);
+           DepositValueCalc(scanner);
 
         }
         else if(user_input.equals("3"))  {
@@ -42,9 +42,9 @@ public class Main {
 
         System.out.println("What is your principle amount?");
         int principle_amount = scanner.nextInt();
-        System.out.println("What is your interest rate?");
+        System.out.println("What is your interest rate? (Decimal Form");
         double interest_rate = scanner.nextDouble();
-        System.out.println("How long is your loan for?");
+        System.out.println("How long is your loan for? (months)");
         int loan_length = scanner.nextInt();
         interest_rate = interest_rate / 12;
         double monthly_payment = (principle_amount * interest_rate) / (1 - Math.pow(1 + interest_rate, -loan_length));
@@ -55,13 +55,17 @@ public class Main {
 
     }
 
-    public static int DepositValueCalc(Scanner scanner){
+    public static void DepositValueCalc(Scanner scanner){
     System.out.println("Enter deposit amount");
     int deposit_amount = scanner.nextInt();
-    System.out.println("Enter your interest rate");
-    int interest_rate = scanner.nextInt();
-    System.out.println("Enter ");
-    return 0;
+    System.out.println("Enter your interest rate (Decimal Form)");
+    double interest_rate = scanner.nextDouble();
+    System.out.println("Enter the length of your deposit (years)");
+    int time_length = scanner.nextInt();
+    double future_value = (deposit_amount * Math.pow((1 + (interest_rate / 365)), (365 * time_length)));
+    double interest_earned = (double) (future_value - deposit_amount);
+    System.out.println("Your CD's ending balance will be $" + future_value + " and you have earned $" + interest_earned + " in interest");
+
     }
 
     public static int AnnuityCalc(Scanner scanner){
