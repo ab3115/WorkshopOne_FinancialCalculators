@@ -49,7 +49,7 @@ public class Main {
         interest_rate = interest_rate / 12;
         double monthly_payment = (principle_amount * interest_rate) / (1 - Math.pow(1 + interest_rate, -loan_length));
         double total_interest = (monthly_payment * loan_length) - principle_amount;
-        System.out.println("Your monthly payment is $" + monthly_payment + " per month with a total interest of $" + total_interest);
+        System.out.println("Your monthly payment is $" + String.format("%.2f", monthly_payment) + " per month with a total interest of $" + String.format("%.2f", total_interest));
 
 
 
@@ -64,7 +64,7 @@ public class Main {
     int time_length = scanner.nextInt();
     double future_value = (deposit_amount * Math.pow((1 + (interest_rate / 365)), (365 * time_length)));
     double interest_earned = (double) (future_value - deposit_amount);
-    System.out.println("Your CD's ending balance will be $" + future_value + " and you have earned $" + interest_earned + " in interest");
+    System.out.println("Your CD's ending balance will be $" + String.format("%.2f", future_value) + " and you have earned $" + String.format("%.2f", interest_earned) + " in interest");
 
     }
 
