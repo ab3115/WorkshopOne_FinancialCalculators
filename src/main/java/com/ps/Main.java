@@ -29,7 +29,7 @@ public class Main {
         }
         else if(user_input.equals("3"))  {
 
-            int Annuity_Value = AnnuityCalc(scanner);
+            AnnuityCalc(scanner);
 
         }
         else{
@@ -60,16 +60,27 @@ public class Main {
     int deposit_amount = scanner.nextInt();
     System.out.println("Enter your interest rate (Decimal Form)");
     double interest_rate = scanner.nextDouble();
+    System.out.println("Enter the number of times the interest is compounded per year");
+    int period_rate = scanner.nextInt();
     System.out.println("Enter the length of your deposit (years)");
     int time_length = scanner.nextInt();
-    double future_value = (deposit_amount * Math.pow((1 + (interest_rate / 365)), (365 * time_length)));
+    double future_value = (deposit_amount * Math.pow((1 + (interest_rate / period_rate)), (period_rate * time_length)));
     double interest_earned = (double) (future_value - deposit_amount);
     System.out.println("Your CD's ending balance will be $" + String.format("%.2f", future_value) + " and you have earned $" + String.format("%.2f", interest_earned) + " in interest");
 
     }
 
-    public static int AnnuityCalc(Scanner scanner){
+    public static void AnnuityCalc(Scanner scanner){
 
-return -1;
+    System.out.println("Enter your monthly payout");
+    int monthly_payout = scanner.nextInt();
+    System.out.println("Enter the expected interest rate (Decimal Form)");
+    double interest_rate = scanner.nextDouble();
+    System.out.println("Enter the number of times the interest is compounded per year");
+    int period_rate = scanner.nextInt();
+    System.out.println("Enter the number of years to pay out");
+    int years = scanner.nextInt();
+    double amount = monthly_payout * (1-(1 / (Math.pow((1 + interest_rate),(period_rate * years))))) * (1 / interest_rate);
+    System.out.println("You would need to invest $" + amount + " today");
     }
 }
